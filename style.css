@@ -48,6 +48,8 @@ body {
     color: var(--clr-text-main);
     width: 100%;
     min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 }   
 
 h1, h2, h3, h4,
@@ -253,4 +255,37 @@ input[type=checkbox] {
     top: 50%;
     z-index: -1;
 }
+
+.bubbles {
+    position: relative;
+    display: flex;
+}
+
+.bubbles span {
+position: absolute;
+width: 30px;
+height: 30px;
+background: #4fc3dc;
+margin: 0 4px;
+border-radius: 50%;
+box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc34f, 0 0 100px #4fc34f;
+animation: bubbles 10s linear infinite;
+left: 0;
+top: 0;
+}
+
+span + span {
+    left: 30%;
+}
+
+@keyframes bubbles
+{
+    0% { transform: translateY(100vh) scale(0);}
+    100% { transform: translateY(10vh) scale(1);}
+
+}
+
+
+
+
 
